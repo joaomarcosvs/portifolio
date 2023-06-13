@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&family=Oswald&display=swap');
+
+:root {
+    --cor-primaria: #222222;
+    --cor-secundaria: #F3EFE0;
+    --cor-terciaria: #22A39F;
+    --cor-destaque: #434242;
+
+    --fonte-primaria: 'Oswald', sans-serif;
+    --fonte-secundaria: 'Fira Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   /* height: 100vh;*/
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+/* a class é um jeto de melhor se organizar dentro do css*/
+
+.cabecalho{
+    padding: 2% 0 0 15%;
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-primaria);
+    font-size: 33px;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.titulo-destaque {
+    color: var(--cor-destaque);
+}
+
+.imagem {
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    gap: 32px;
+}
+
+.apresentacao {
+    margin: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*A propriedade gap controla explicitamente o espaço entre os itens flexíveis. Aplica esse espaçamento apenas entre os itens que não estão nas bordas externas.*/
+
+.apresentacao__conteudo {
+    width:100%;
+    max-width: 593px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo {
+    color: var(--cor-terciaria);
+    font-size: 36px;
+    font-family: var(--fonte-primaria);
+}
+
+.apresentacao__conteudo__paragrafo {
+    font-size: 24px;
+    font-family: var(--fonte-secundaria);
+    text-decoration: none;
+}
+
+/*flex-direction apenas para dar uma direção para o conteudo, o alingn-items serve para dizer de que jeito os itens deve estar alinhados e o gap para o quanro de espaço entre eles deve existir*/
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+
+}
+
+.apresentacao__botoes__subtitulo {
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.apresentacao__links__botao{
+    display: flex;
+    background-image: -webkit-linear-gradient(45deg, var(--cor-destaque) 50%, transparent 50%);
+    background-image: linear-gradient(45deg, var(--cor-destaque)  50%, transparent 55%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background 450ms ease-in-out;
+    justify-content: center;
+    gap: 16px;
+    /*expessura da borda*/
+    border: 2px solid var(--cor-terciaria);
+    width: 300px;
+    text-align: left;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family:var(--fonte-secundaria);
+}
+
+.certificado__pucrs__botao {
+    text-decoration: none;
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__links__botao:hover {
+    background-position: 0;
+}
+
+.apresentacao__links__botao:hover .apesentacao__botoes__botao__texto {
+    visibility: hidden;
+    transition: 0.2s;
+}
+
+.apresentacao__links__botao:active {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(2px);
+}
+
+.rodape {
+    padding: 30px;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    font-family: var(--fonte-primaria);
+    text-align: center;
+    font-size: 22px;
+}
+
+.rodape__nome {
+    font-family: var(--fonte-secundaria);
+    font-size: 22px;
+}
+
+@media screen and (max-width: 768px) {
+    .apresentacao {
+        flex-direction: column;
+        padding: 5% 10%;
+    }
+
+    .apresentacao__conteudo {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .apresentacao__links {
+        align-items: center;
+        text-align: center;
+    }
+
+    .apresentacao__links__botao {
+        width: 100%;
+    }
+}
